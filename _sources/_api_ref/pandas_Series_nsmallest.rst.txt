@@ -1,0 +1,51 @@
+.. _pandas_Series_nsmallest:
+
+pandas.Series.nsmallest
+***********************
+        Return the smallest `n` elements.
+
+Parameters
+----------
+
+        n : int, default 5
+            Return this many ascending sorted values.
+        keep : {'first', 'last', 'all'}, default 'first'
+            When there are duplicate values that cannot all fit in a
+            Series of `n` elements:
+
+            - ``first`` : return the first `n` occurrences in order
+                of appearance.
+            - ``last`` : return the last `n` occurrences in reverse
+                order of appearance.
+            - ``all`` : keep all occurrences. This can result in a Series of
+                size larger than `n`.
+
+Returns
+-------
+
+        Series
+            The `n` smallest values in the Series, sorted in increasing order.
+
+Examples
+-----------
+
+    .. literalinclude:: ../../../examples/series_nsmallest.py
+       :language: python
+       :lines: 27-
+       :name: ex_series_nsmallest
+       :caption: pandas.Series.nsmallest example
+
+    Output::
+
+        > python series_nsmallest.py
+        0    0
+        1    1
+        2    2
+        3    3
+        dtype: int64
+
+
+.. seealso::
+
+        :ref:`pandas_series_nlargest`: Return `n` largest elements
+

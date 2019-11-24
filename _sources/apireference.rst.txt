@@ -1,0 +1,17 @@
+.. _apireference:
+.. include:: ./ext_links.txt
+
+API Reference
+~~~~~~~~~~~~~
+This page lists Pandas APIs currently supported by Intel® Scalable Dataframe Compiler
+
+.. toctree::
+   :maxdepth: 1
+
+   _api_ref/pandas_Series_get
+   _api_ref/pandas_Series_at
+   _api_ref/pandas_Series_iat
+   _api_ref/pandas_Series_loc
+   _api_ref/pandas_Series_iloc
+   _api_ref/pandas_Series_nsmallest
+   _api_ref/pandas_Series_nlargest
