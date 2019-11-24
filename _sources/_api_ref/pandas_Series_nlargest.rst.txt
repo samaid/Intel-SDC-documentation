@@ -1,0 +1,51 @@
+.. _pandas_Series_nlargest:
+
+pandas.Series.nlargest
+**********************
+        Return the largest `n` elements.
+
+Parameters
+----------
+
+        n : int, default 5
+            Return this many descending sorted values.
+        keep : {'first', 'last', 'all'}, default 'first'
+            When there are duplicate values that cannot all fit in a
+            Series of `n` elements:
+
+            - ``first`` : return the first `n` occurrences in order
+                of appearance.
+            - ``last`` : return the last `n` occurrences in reverse
+                order of appearance.
+            - ``all`` : keep all occurrences. This can result in a Series of
+                size larger than `n`.
+
+Returns
+-------
+
+        Series
+            The `n` largest values in the Series, sorted in decreasing order.
+
+Examples
+-----------
+
+    .. literalinclude:: ../../../examples/series_nlargest.py
+       :language: python
+       :lines: 27-
+       :name: ex_series_nlargest
+       :caption: pandas.Series.nlargest example
+
+    Output::
+
+        > python series_nlargest.py
+        0    9
+        1    8
+        2    7
+        3    6
+        dtype: int64
+
+
+.. seealso::
+
+        :ref:`pandas_series_nsmallest`: Return `n` smallest elements
+

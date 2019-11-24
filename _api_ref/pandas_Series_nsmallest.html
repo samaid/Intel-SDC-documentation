@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.Series.nsmallest &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pandas.Series.nlargest" href="pandas_Series_nlargest.html" />
+    <link rel="prev" title="pandas.Series.iloc" href="pandas_Series_iloc.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="pandas_Series_nlargest.html" title="pandas.Series.nlargest">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="pandas_Series_iloc.html" title="pandas.Series.iloc">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../apireference.html" accesskey="U">API Reference</a> &#187;</li>
+      
+      <li>pandas.Series.nsmallest</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pandas-series-nsmallest">
+<span id="id1"></span><h1>pandas.Series.nsmallest<a class="headerlink" href="#pandas-series-nsmallest" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>Return the smallest <cite>n</cite> elements.</p>
+</div></blockquote>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt>n<span class="classifier">int, default 5</span></dt><dd><p>Return this many ascending sorted values.</p>
+</dd>
+<dt>keep<span class="classifier">{‘first’, ‘last’, ‘all’}, default ‘first’</span></dt><dd><p>When there are duplicate values that cannot all fit in a
+Series of <cite>n</cite> elements:</p>
+<ul>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">first</span></code><span class="classifier">return the first <cite>n</cite> occurrences in order</span></dt><dd><p>of appearance.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">last</span></code><span class="classifier">return the last <cite>n</cite> occurrences in reverse</span></dt><dd><p>order of appearance.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">all</span></code><span class="classifier">keep all occurrences. This can result in a Series of</span></dt><dd><p>size larger than <cite>n</cite>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="simple">
+<dt>Series</dt><dd><p>The <cite>n</cite> smallest values in the Series, sorted in increasing order.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="ex-series-nsmallest">
+<div class="code-block-caption"><span class="caption-text">pandas.Series.nsmallest example</span><a class="headerlink" href="#ex-series-nsmallest" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sdc</span>
+
+
+<span class="nd">@sdc.jit</span>
+<span class="k">def</span> <span class="nf">series_nsmallest</span><span class="p">():</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">series_nsmallest</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">series_nsmallest</span><span class="o">.</span><span class="n">py</span>
+<span class="mi">0</span>    <span class="mi">0</span>
+<span class="mi">1</span>    <span class="mi">1</span>
+<span class="mi">2</span>    <span class="mi">2</span>
+<span class="mi">3</span>    <span class="mi">3</span>
+<span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="pandas_Series_nlargest.html#pandas-series-nlargest"><span class="std std-ref">pandas.Series.nlargest</span></a>: Return <cite>n</cite> largest elements</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apireference.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pandas_Series_get.html">pandas.Series.get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas_Series_at.html">pandas.Series.at</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas_Series_iat.html">pandas.Series.iat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas_Series_loc.html">pandas.Series.loc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas_Series_iloc.html">pandas.Series.iloc</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pandas.Series.nsmallest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas_Series_nlargest.html">pandas.Series.nlargest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pandas_Series_iloc.html"
+                        title="previous chapter">pandas.Series.iloc</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pandas_Series_nlargest.html"
+                        title="next chapter">pandas.Series.nlargest</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.2.1. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>
